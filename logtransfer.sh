@@ -2,7 +2,10 @@
 
 cd <path_of_file_to_be_copied>
 customdate="2022-12-09"
-auth2=`cat <secret_file> | openssl enc -base64 -d -aes-256-cbc -nosalt -pass pass:secret$file`
+auth2=`cat .<secret_file> | openssl enc -base64 -d -aes-256-cbc -nosalt -pass pass:secret$file`
+
+#secretfile can be created by below command
+#echo '<password>' | openssl enc -base64 -e -aes-256-cbc -nosalt  -pass pass:secret$fle  > .<secretfile>
 
 
 echo "*************************** Logs Transfter started  $(date) *********************** \n "
